@@ -1,0 +1,55 @@
+{
+    "fields": [
+        {
+            "name": "address1",
+            "type": "string"
+        },
+        {
+            "name": "address2",
+            "type": "string"
+        },
+        {
+           "name":"zipcode",
+           "type": "number"
+        },
+         {
+            "name": "country",
+            "type": "string"
+        },
+        {
+            "name": "state",
+            "type": "string"
+        }, 
+        
+          {
+            "name": "phoneno",
+            "type": "string"
+        },
+        {
+            "name": "mobileno",
+            "type": "string"
+        },
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ]
+}
+
+
+

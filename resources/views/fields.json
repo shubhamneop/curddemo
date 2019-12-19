@@ -1,0 +1,44 @@
+
+{
+    "fields": [
+        {
+            "name": "category",
+            "type": "string"
+        },
+        
+        {
+            "name": "category",
+            "type": "select",
+            "options": {
+                "technology": "Technology",
+                "tips": "Tips",
+                "health": "Health"
+            }
+        },
+        {
+            "name": "cat_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "cat_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\Cats"
+        }
+    ],
+    "validations": [
+        {
+            "field": "title",
+            "rules": "required|max:10"
+        }
+    ]
+}
